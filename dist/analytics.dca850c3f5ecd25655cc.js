@@ -15,7 +15,7 @@
   \**************************/
 /***/ (() => {
 
-eval("function createAnalytics() {\n    let counter = 0\n    let isDestroyed = false\n\n    const listener = () => counter++\n\n    document.addEventListener('click', listener)\n\n    return {\n        destroy() {\n            document.removeEventListener('click', listener)\n            isDestroyed = true\n        },\n        getClicks() {\n            if(isDestroyed) {\n                return \"Analytics is destroyed\"\n            }\n            return counter\n        }\n    }\n}\n\nwindow.analytics = createAnalytics()\n\n//# sourceURL=webpack://webpack-course-2020/./src/analytics.js?");
+eval("function createAnalytics() {\n    let counter = 0\n    let isDestroyed = false\n\n    const listener = () => counter++\n\n    document.addEventListener('click', listener)\n\n    return {\n        destroy() {\n            document.removeEventListener('click', listener)\n            isDestroyed = true\n        },\n        getClicks() {\n            if(isDestroyed) {\n                return `Analytics is destroyed. Total click = ${counter}`\n            }\n            return counter\n        }\n    }\n}\n\nwindow.analytics = createAnalytics()\n\n//# sourceURL=webpack://webpack-course-2020/./src/analytics.js?");
 
 /***/ })
 

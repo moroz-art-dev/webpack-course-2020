@@ -1,4 +1,5 @@
 const path = require('path')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -7,7 +8,13 @@ module.exports = {
         analytics: './src/analytics.js'
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            //title: 'Webpack Art', при template параметр не работает
+            template: './src/index.html'
+        })
+    ]
 }
