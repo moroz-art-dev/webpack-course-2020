@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Post.js":
-/*!*********************!*\
-  !*** ./src/Post.js ***!
-  \*********************/
+/***/ "./Post.js":
+/*!*****************!*\
+  !*** ./Post.js ***!
+  \*****************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Post)\n/* harmony export */ });\nclass Post {\n    constructor(title) {\n        this.title = title\n        this.date = new Date()\n    }\n\n    toString() {\n        return JSON.stringify({\n            title: this.title,\n            date: this.date.toJSON()\n        })\n    }\n\n    get uppercaseTitle() {\n        return this.title.toUpperCase()\n    }\n}\n\n//# sourceURL=webpack://webpack-course-2020/./src/Post.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Post)\n/* harmony export */ });\nclass Post {\n    constructor(title) {\n        this.title = title\n        this.date = new Date()\n    }\n\n    toString() {\n        return JSON.stringify({\n            title: this.title,\n            date: this.date.toJSON()\n        })\n    }\n\n    get uppercaseTitle() {\n        return this.title.toUpperCase()\n    }\n}\n\n//# sourceURL=webpack:///./Post.js?");
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ \"./src/Post.js\");\n\n\nconst post = new _Post__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Webpack Post Title')\n\nconsole.log('Post to String', post.toString())\n\n//# sourceURL=webpack://webpack-course-2020/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n\n\nconst post = new _Post__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Webpack Post Title')\n\nconsole.log('Post to String', post.toString())\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 
@@ -90,7 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Pos
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./index.js");
 /******/ 	
 /******/ })()
 ;
