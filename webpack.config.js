@@ -23,8 +23,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.css$/i,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                type: 'asset/resource'
+                //use: ['file-loader'] поменял на type: 'asset/resource' создает битую картинку
             }
         ]
     }
