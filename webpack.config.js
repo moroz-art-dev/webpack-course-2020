@@ -30,6 +30,19 @@ module.exports = {
                 test: /\.(png|jpe?g|gif)$/i,
                 type: 'asset/resource'
                 //use: ['file-loader'] поменял на type: 'asset/resource' создает битую картинку
+            },
+            {
+                test: /\.(ttf|woff|woff2|eot)$/i,
+                type: 'asset/resource'
+                // use: ['file-loader']
+            },
+            {
+                test: /\.xml$/i,
+                use: ['xml-loader']
+            },
+            {
+                test: /\.csv$/i,
+                use: ['csv-loader']
             }
         ]
     }
