@@ -24,6 +24,7 @@
     "pkg-dir": "^6.0.1"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.4.0",
     "webpack": "^5.59.1",
     "webpack-cli": "^4.9.1"
