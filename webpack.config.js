@@ -25,6 +25,9 @@ module.exports = {
             chunks: "all"
         }
     },
+    devServer: {
+        port: 4200
+    },
     plugins: [
         new HTMLWebpackPlugin({
             //title: 'Webpack Art', при template параметр не работает
