@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.5.0",
     "csv-loader": "^3.0.3",
     "file-loader": "^6.2.0",
