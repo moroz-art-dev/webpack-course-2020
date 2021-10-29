@@ -1,9 +1,62 @@
 const path = require('path')
+const webpack = require("webpack")
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
+
+const isDev = process.env.NODE_ENV === "development"
+const isProd = !isDev
+
+
+const optimization = () => {
+    const config = {
+        splitChunks: {
+            chunks: "all"
+        }
+    }
+    if(isProd){
+        config.minimizer = [
+            new CssMinimizerWebpackPlugin(),
+            new TerserWebpackPlugin()
+        ]
+    }
+    return config
+}
+
+const plugins = [
+    new HTMLWebpackPlugin({
+        //title: 'Webpack Art', при template параметр не работает
+        template: './index.html',
+        minify: {
+            collapseWhitespace: isProd
+        }
+    }),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+        patterns: [
+            {
+                from: path.resolve(__dirname, 'src/favicon.ico'),
+                to: path.resolve(__dirname, 'dist')
+            }
+        ]
+    }),
+    new MiniCssExtractPlugin({
+        filename: isDev ? "[name].css" : "[name].[contenthash].css",
+        chunkFilename: isDev ? "[id].css" : "[id].[contenthash].css",
+    })
+]
+if (isDev) {
+    // only enable hot in development
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+}
+
+console.log('IS DEV: ', isDev)
 
 module.exports = {
+    target: "web",  // <=== can be omitted as default is 'web'
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
@@ -21,34 +74,26 @@ module.exports = {
             '@': path.resolve(__dirname, 'src')
         }
     },
-    optimization: {
-        splitChunks: {
-            chunks: "all"
-        }
-    },
+    optimization: optimization(),
     devServer: {
-        port: 4200
+        port: 4200,
+        hot: isDev
     },
-    plugins: [
-        new HTMLWebpackPlugin({
-            //title: 'Webpack Art', при template параметр не работает
-            template: './index.html'
-        }),
-        new CleanWebpackPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'src/favicon.ico'),
-                    to: path.resolve(__dirname, 'dist')
-                 }
-            ]
-        })
-    ],
+    plugins,
     module: {
         rules: [
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader']
+                use: [
+                  {
+                     loader: MiniCssExtractPlugin.loader,
+                     options: {
+                         //hmr: isDev,    // webpack 5 absent
+                         //reloadAll: true // webpack 5 absent
+                     },
+                  },
+                  'css-loader'
+                ]
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
