@@ -37,6 +37,7 @@
     "csv-loader": "^3.0.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.4.0",
+    "less-loader": "^10.2.0",
     "mini-css-extract-plugin": "^2.4.3",
     "papaparse": "^5.3.1",
     "style-loader": "^3.3.1",

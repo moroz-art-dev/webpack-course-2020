@@ -10,6 +10,8 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 const isDev = process.env.NODE_ENV === "development"
 const isProd = !isDev
 
+const filename = ext => isDev ? `[name].${ext}` : `[name][hash].${ext}`
+
 
 const optimization = () => {
     const config = {
@@ -44,8 +46,8 @@ const plugins = [
         ]
     }),
     new MiniCssExtractPlugin({
-        filename: isDev ? "[name].css" : "[name].[contenthash].css",
-        chunkFilename: isDev ? "[id].css" : "[id].[contenthash].css",
+        filename: filename('css'),
+        chunkFilename: filename('css'),
     })
 ]
 if (isDev) {
@@ -64,7 +66,7 @@ module.exports = {
         analytics: './analytics.js'
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: filename('js'),
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -93,6 +95,17 @@ module.exports = {
                      },
                   },
                   'css-loader'
+                ]
+            },
+            {
+                test: /\.less$/i,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {},
+                    },
+                    'css-loader',
+                    'less-loader'
                 ]
             },
             {
