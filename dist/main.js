@@ -36,7 +36,7 @@ eval("\n\n/* eslint-disable */\nfunction normalizeUrl(pathComponents) {\n  retur
   \***************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1635581476994\n      var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack:///./styles/styles.css?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1635624385903\n      var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack:///./styles/styles.css?");
 
 /***/ }),
 
@@ -46,7 +46,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1635581476842\n      var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack:///./styles/less.less?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1635624385745\n      var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack:///./styles/less.less?");
+
+/***/ }),
+
+/***/ "./styles/scss.scss":
+/*!**************************!*\
+  !*** ./styles/scss.scss ***!
+  \**************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1635624385761\n      var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack:///./styles/scss.scss?");
 
 /***/ }),
 
@@ -56,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _models_Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @models/Post */ \"./models/Post.js\");\n/* harmony import */ var _assets_webpack_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/assets/webpack-logo.png */ \"./assets/webpack-logo.png\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_less_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/less.less */ \"./styles/less.less\");\n\n\n//import json from \"./assets/json\"\n//import xml from \"./assets/data.xml\"\n//import csv from \"./assets/data.csv\"\n\n\n\n\nconst post = new _models_Post__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('Webpack Post Title', _assets_webpack_logo_png__WEBPACK_IMPORTED_MODULE_2__)\n\njquery__WEBPACK_IMPORTED_MODULE_0__(\"pre\").addClass('code').html(post.toString())\n\n//console.log('JSON: ', json)\n//console.log('XML: ', xml)\n//console.log('CSV: ', csv)\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _models_Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @models/Post */ \"./models/Post.js\");\n/* harmony import */ var _assets_webpack_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/assets/webpack-logo.png */ \"./assets/webpack-logo.png\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_less_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/less.less */ \"./styles/less.less\");\n/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/scss.scss */ \"./styles/scss.scss\");\n\n\n//import json from \"./assets/json\"\n//import xml from \"./assets/data.xml\"\n//import csv from \"./assets/data.csv\"\n\n\n\n\n\nconst post = new _models_Post__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('Webpack Post Title', _assets_webpack_logo_png__WEBPACK_IMPORTED_MODULE_2__)\n\njquery__WEBPACK_IMPORTED_MODULE_0__(\"pre\").addClass('code').html(post.toString())\n\n//console.log('JSON: ', json)\n//console.log('XML: ', xml)\n//console.log('CSV: ', csv)\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -206,7 +216,7 @@ eval("module.exports = __webpack_require__.p + \"47692505d122dbcae490.png\";\n\n
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1d3d7b16bd7d58ebfbd2")
+/******/ 		__webpack_require__.h = () => ("107d84545f771f015e3f")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

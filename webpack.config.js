@@ -12,6 +12,21 @@ const isProd = !isDev
 
 const filename = ext => isDev ? `[name].${ext}` : `[name][hash].${ext}`
 
+const cssLoaders = extra => {
+    const loaders = [
+        {
+            loader: MiniCssExtractPlugin.loader,
+            options: {},
+        },
+        'css-loader'
+    ]
+    if(extra){
+        loaders.push(extra)
+    }
+
+    return loaders
+}
+
 
 const optimization = () => {
     const config = {
@@ -86,27 +101,15 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: [
-                  {
-                     loader: MiniCssExtractPlugin.loader,
-                     options: {
-                         //hmr: isDev,    // webpack 5 absent
-                         //reloadAll: true // webpack 5 absent
-                     },
-                  },
-                  'css-loader'
-                ]
+                use: cssLoaders()
             },
             {
                 test: /\.less$/i,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {},
-                    },
-                    'css-loader',
-                    'less-loader'
-                ]
+                use: cssLoaders('less-loader')
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: cssLoaders('sass-loader')
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
