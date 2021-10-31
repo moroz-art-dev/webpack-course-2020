@@ -7,6 +7,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 const isDev = process.env.NODE_ENV === "development"
 const isProd = !isDev
@@ -44,33 +45,42 @@ const optimization = () => {
     return config
 }
 
-const plugins = [
-    new HTMLWebpackPlugin({
-        //title: 'Webpack Art', при template параметр не работает
-        template: './index.html',
-        minify: {
-            collapseWhitespace: isProd
-        }
-    }),
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-        patterns: [
-            {
-                from: path.resolve(__dirname, 'src/favicon.ico'),
-                to: path.resolve(__dirname, 'dist')
+const plugins = () => {
+    const base = [
+        new HTMLWebpackPlugin({
+            //title: 'Webpack Art', при template параметр не работает
+            template: './index.html',
+            minify: {
+                collapseWhitespace: isProd
             }
-        ]
-    }),
-    new MiniCssExtractPlugin({
-        filename: filename('css'),
-        chunkFilename: filename('css'),
-    })
-]
-if (isDev) {
-    // only enable hot in development
-    plugins.push(new ESLintPlugin())
-    plugins.push(new webpack.HotModuleReplacementPlugin())
+        }),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/favicon.ico'),
+                    to: path.resolve(__dirname, 'dist')
+                }
+            ]
+        }),
+        new MiniCssExtractPlugin({
+            filename: filename('css'),
+            chunkFilename: filename('css'),
+        })
+    ]
+
+    if (isDev) {
+        // only enable hot in development
+        base.push(new ESLintPlugin())
+        base.push(new webpack.HotModuleReplacementPlugin())
+    }
+    if (isProd) {
+        base.push(new BundleAnalyzerPlugin())
+    }
+
+    return base
 }
+
 
 const babelOptions = preset => {
     const opts = {
@@ -122,7 +132,7 @@ module.exports = {
         hot: isDev
     },
     devtool: isDev ? 'source-map' : false,
-    plugins,
+    plugins: plugins(),
     module: {
         rules: [
             {
