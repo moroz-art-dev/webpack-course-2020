@@ -1,12 +1,16 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./babel.js":
 /*!******************!*\
   !*** ./babel.js ***!
   \******************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "../node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -53,6 +57,11 @@ _defineProperty(Util, "id", Date.now());
 console.log('Util Id:', Util.id);
 console.log(unused);
 
+console.log('Lodash', lodash__WEBPACK_IMPORTED_MODULE_0___default().random(0, 42, true));
+/*import('lodash').then(_ => {
+    console.log('Lodash', _.random(0,42,true))
+})*/
+
 /***/ }),
 
 /***/ "./models/Post.js":
@@ -61,7 +70,6 @@ console.log(unused);
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Post)
@@ -110,7 +118,6 @@ var Post = /*#__PURE__*/function () {
   \*******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
@@ -119,7 +126,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-dom */ "../node_modules/react-dom/index.js");
 /* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./babel */ "./babel.js");
-/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/styles.css */ "./styles/styles.css");
 /* harmony import */ var _styles_less_less__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/less.less */ "./styles/less.less");
 /* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/scss.scss */ "./styles/scss.scss");
@@ -162,12 +168,11 @@ var App = function App() {
   \***************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1635696486705
+      // 1635697743566
       var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -182,12 +187,11 @@ __webpack_require__.r(__webpack_exports__);
   \**************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1635696486393
+      // 1635697743206
       var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -202,12 +206,11 @@ __webpack_require__.r(__webpack_exports__);
   \**************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1635696486408
+      // 1635697743220
       var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -222,7 +225,6 @@ __webpack_require__.r(__webpack_exports__);
   \*********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "47692505d122dbcae490.png";
 
 /***/ })
@@ -243,7 +245,7 @@ module.exports = __webpack_require__.p + "47692505d122dbcae490.png";
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
-/******/ 			// no module.loaded needed
+/******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
@@ -257,6 +259,9 @@ module.exports = __webpack_require__.p + "47692505d122dbcae490.png";
 /******/ 			module.error = e;
 /******/ 			throw e;
 /******/ 		}
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -353,7 +358,7 @@ module.exports = __webpack_require__.p + "47692505d122dbcae490.png";
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("cbdb00ca081de2a777ea")
+/******/ 		__webpack_require__.h = () => ("5077cd508f277b6ee8e5")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -427,6 +432,15 @@ module.exports = __webpack_require__.p + "47692505d122dbcae490.png";
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -1461,8 +1475,8 @@ module.exports = __webpack_require__.p + "47692505d122dbcae490.png";
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	__webpack_require__.O(undefined, ["vendors-node_modules_jquery_dist_jquery_js","vendors-node_modules_babel_polyfill_lib_index_js-node_modules_mini-css-extract-plugin_dist_hm-246ccc"], () => (__webpack_require__("../node_modules/@babel/polyfill/lib/index.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_jquery_dist_jquery_js","vendors-node_modules_babel_polyfill_lib_index_js-node_modules_mini-css-extract-plugin_dist_hm-246ccc"], () => (__webpack_require__("./index.jsx")))
+/******/ 	__webpack_require__.O(undefined, ["vendors-node_modules_jquery_dist_jquery_js","vendors-node_modules_babel_polyfill_lib_index_js-node_modules_lodash_lodash_js-node_modules_m-39b55e"], () => (__webpack_require__("../node_modules/@babel/polyfill/lib/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_jquery_dist_jquery_js","vendors-node_modules_babel_polyfill_lib_index_js-node_modules_lodash_lodash_js-node_modules_m-39b55e"], () => (__webpack_require__("./index.jsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
