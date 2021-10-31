@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === "development"
 const isProd = !isDev
@@ -67,7 +68,8 @@ const plugins = [
 ]
 if (isDev) {
     // only enable hot in development
-    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new ESLintPlugin())
+    plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 
 const babelOptions = preset => {
@@ -79,6 +81,18 @@ const babelOptions = preset => {
         opts.presets.push(preset)
     }
     return opts
+}
+
+const jsLoaders = () => {
+    const loaders = [{
+        loader: 'babel-loader',
+        options: babelOptions()
+    }]
+    if (isDev) {
+        //loaders.push('eslint-loader')  // устарело
+    }
+
+    return loaders
 }
 
 console.log('IS DEV: ', isDev)
@@ -144,10 +158,7 @@ module.exports = {
             {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: babelOptions()
-                }
+                use: jsLoaders()
             },
             {
                 test: /\.ts$/,

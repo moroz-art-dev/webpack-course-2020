@@ -42,6 +42,7 @@ function _start() {
 }
 
 start().then(console.log);
+var unused = 42;
 
 var Util = function Util() {
   _classCallCheck(this, Util);
@@ -50,6 +51,7 @@ var Util = function Util() {
 _defineProperty(Util, "id", Date.now());
 
 console.log('Util Id:', Util.id);
+console.log(unused);
 
 /***/ }),
 
@@ -165,7 +167,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1635674475464
+      // 1635696486705
       var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -185,7 +187,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1635674475184
+      // 1635696486393
       var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -205,7 +207,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1635674475198
+      // 1635696486408
       var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -351,7 +353,7 @@ module.exports = __webpack_require__.p + "47692505d122dbcae490.png";
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("ad9440003fb83bbd62f8")
+/******/ 		__webpack_require__.h = () => ("cbdb00ca081de2a777ea")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
